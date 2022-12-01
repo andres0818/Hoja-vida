@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* targeta presentacion */
+      body {
+        background-image: url(./imagenes/Fondo.png);
+        display: flex;
+        justify-content: center;
+      }
+      .container {
+        position: relative;
+        background-color: white;
+        margin-top: 12%;
+        border-radius: 15px;
+        width: 20%;
+      }
+      .container-html {
+        position: relative;
+        background-color: white;
+        margin-top: 12%;
+        border-radius: 15px;
+        width: 20%;
+        display: none;
+      }
+      .container-css {
+        position: relative;
+        background-color: white;
+        margin-top: 12%;
+        border-radius: 15px;
+        width: 20%;
+        display: none;
+      }
+      .container-js {
+        position: relative;
+        background-color: white;
+        margin-top: 12%;
+        border-radius: 15px;
+        width: 20%;
+        display: none;
+      }
+      .container::after {
+        background: black;
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        filter: blur(10px);
+        z-index: -1;
+        top: 0;
+      }
+
+      .encabezado {
+        position: absolute;
+        background: #b2fefa;
+        background: -webkit-linear-gradient(to right, #0ed2f7, #b2fefa);
+        background: linear-gradient(to right, #0ed2f7, #b2fefa);
+
+        height: 13vh;
+        width: 100%;
+        border-radius: 15px 15px 0 0;
+      }
+
+      .foto img {
+        display: flex;
+        position: relative;
+        border-radius: 50px;
+        width: 80px;
+        height: 80px;
+        border: 3px solid white;
+        margin: 7.5vh 35% 1vh 35%;
+      }
+      .foto img:hover {
+        transform: scale(300%) translateY(20px);
+        background-color: white;
+        transition: all 2s;
+      }
+      .descripcion-personal {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .name {
+        display: flex;
+        justify-content: center;
+      }
+      .age {
+        display: flex;
+        justify-content: center;
+        color: gray;
+      }
+      .contacto {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+      }
+      .contacto a {
+        text-decoration: none;
+      }
+      .contacto img {
+        width: 15px;
+        height: 15px;
+      }
+      .location {
+        display: flex;
+        justify-content: center;
+        color: gray;
+        margin-bottom: 5vh;
+      }
+
+      .descripcion-followers {
+        display: flex;
+        justify-content: center;
+        gap: 7vh;
+        margin-top: 2vh;
+      }
+
+      .title img {
+        width: 50px;
+        height: 50px;
+      }
+      .text-title {
+        color: gray;
+        margin-bottom: 3vh;
+      }
+
+      .img-perfil {
+        border-radius: 8px;
+        box-shadow: gray 0 0 10px 1px;
+      }
+
+      @media (max-width: 1024px) {
+        .container {
+          position: relative;
+          background-color: rgb(255, 255, 255);
+          margin-top: 12%;
+          border-radius: 15px;
+          width: 40%;
+        }
+        .container-html {
+          position: relative;
+          background-color: white;
+          margin-top: 6%;
+          border-radius: 15px;
+          width: 40%;
+          display: none;
+        }
+        .container-css {
+          position: relative;
+          background-color: white;
+          margin-top: 6%;
+          border-radius: 15px;
+          width: 40%;
+          display: none;
+        }
+        .container-js {
+          position: relative;
+          background-color: white;
+          margin-top: 6%;
+          border-radius: 15px;
+          width: 40%;
+          display: none;
+        }
+      }
+      @media only screen and (min-width: 390px) and (max-width: 844px) {
+        .container {
+          position: relative;
+          background-color: rgb(255, 255, 255);
+          margin-top: 60%;
+          border-radius: 15px;
+          width: 90%;
+        }
+        .container-html {
+          position: relative;
+          background-color: white;
+          margin-top: 50%;
+          border-radius: 15px;
+          width: 90%;
+          display: none;
+        }
+        .container-css {
+          position: relative;
+          background-color: white;
+          margin-top: 50%;
+          border-radius: 15px;
+          width: 90%;
+          display: none;
+        }
+        .container-js {
+          position: relative;
+          background-color: white;
+          margin-top: 50%;
+          border-radius: 15px;
+          width: 90%;
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="encabezado"></div>
+      <div class="foto">
+        <img src="./imagenes/perfil.jpg" alt="" />
+      </div>
+      <div class="descripcion-personal">
+        <div class="name">Carlos Andres perez</div>
+        <div class="age">Medellín</div>
+        <div class="contacto">
+          <img src="imagenes/llamada-telefonica (1).png" alt="" />&nbsp;<a
+            href="https://api.whatsapp.com/send?phone=+573053499862&text=Buen%20dia,%20vi%20tu%20hoja%20de%20vida"
+            >Contacto</a
+          >
+        </div>
+        <div class="location">Desarrollador web en aprendizaje</div>
+      </div>
+      <hr />
+      <div class="descripcion-followers">
+        <div>
+          <div class="title" onclick="html()">
+            <img src="imagenes/HTML5_logo_and_wordmark.svg.png" alt="" />
+          </div>
+          <div class="text-title">Basico</div>
+        </div>
+        <div>
+          <div class="title" onclick="css()">
+            <img src="imagenes/CSS3_logo_and_wordmark.svg.png" alt="" />
+          </div>
+          <div class="text-title">Basico</div>
+        </div>
+        <div>
+          <div class="title" onclick="js()">
+            <img src="imagenes/javascript_logo.png" alt="" />
+          </div>
+          <div class="text-title">Basico</div>
+        </div>
+      </div>
+    </div>
+    <!-- html -->
+    <div class="container-html">
+      <div class="encabezado"></div>
+      <div class="foto">
+        <img src="./imagenes/HTML5_logo_and_wordmark.svg.png" alt="" />
+      </div>
+      <div class="descripcion-personal">
+        <div class="name">Conocimientos Adquiridos</div>
+        <br />
+        <!-- <div class="age">Medellín</div> -->
+        <div class="location">
+          <ul>
+            <li>Partes de una página</li>
+            <li>Titulos</li>
+            <li>listas</li>
+            <li>Tablas</li>
+            <li>Enlaces</li>
+            <li>Atributos y esilos</li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+      <div class="descripcion-followers">
+        <div>
+          <div class="title" onclick="usuario()">
+            <img class="img-perfil" src="imagenes/perfil.jpg" alt="" />
+          </div>
+          <div class="text-title">Basico</div>
+        </div>
+        <div>
+          <div class="title" onclick="css()">
+            <img src="imagenes/CSS3_logo_and_wordmark.svg.png" alt="" />
+          </div>
+          <div class="text-title">Basico</div>
+        </div>
+        <div>
+          <div class="title" onclick="js()">
+            <img src="imagenes/javascript_logo.png" alt="" />
+          </div>
+          <div class="text-title">Basico</div>
+        </div>
+      </div>
+    </div>
+    <!-- CSS -->
+    <div class="container-css">
+      <div class="encabezado"></div>
+      <div class="foto">
+        <img src="./imagenes/CSS3_logo_and_wordmark.svg.png" alt="" />
+      </div>
+      <div class="descripcion-personal">
+        <div class="name">Conocimientos Adquiridos</div>
+        <br />
+        <div class="location">
+          <ul>
+            <li>Selectores</li>
+            <li>Estilos tipográficos</li>
+            <li>pseudo-clases</li>
+            <li>Backgrounds</li>
+            <li>Degradados</li>
+            <li>Margenes</li>
+            <li>Position</li>
+            <li>Animaciones Basicas</li>
+            <li>Diseños responsivos</li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+      <div class="descripcion-followers">
+        <div>
+          <div class="title" onclick="html()">
+            <img src="imagenes/HTML5_logo_and_wordmark.svg.png" alt="" />
+          </div>
+          <div class="text-title">Basico</div>
+        </div>
+        <div>
+          <div class="title" onclick="usuario()">
+            <img class="img-perfil" src="imagenes/perfil.jpg" alt="" />
+          </div>
+          <div class="text-title">Basico</div>
+        </div>
+        <div>
+          <div class="title" onclick="js()">
+            <img src="imagenes/javascript_logo.png" alt="" />
+          </div>
+          <div class="text-title">Basico</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <div class="container-js">
+      <div class="encabezado"></div>
+      <div class="foto">
+        <img src="./imagenes/javascript_logo.png" alt="" />
+      </div>
+      <div class="descripcion-personal">
+        <div class="name">Conocimientos Adquiridos</div>
+        <br />
+        <div class="location">
+          <ul>
+            <li>Operadores artmeticos</li>
+            <li>Condicionales</li>
+            <li>Arrays, metodos</li>
+            <li>Bucles o ciclos</li>
+            <li>Objetos</li>
+            <li>CRUD-json-server</li>
+            <li>DOM-manipulation</li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+      <div class="descripcion-followers">
+        <div>
+          <div class="title" onclick="html()">
+            <img src="imagenes/HTML5_logo_and_wordmark.svg.png" alt="" />
+          </div>
+          <div class="text-title">Basico</div>
+        </div>
+        <div>
+          <div class="title" onclick="css()">
+            <img src="imagenes/CSS3_logo_and_wordmark.svg.png" alt="" />
+          </div>
+          <div class="text-title">Basico</div>
+        </div>
+        <div>
+          <div class="title" onclick="usuario()">
+            <img class="img-perfil" src="imagenes/perfil.jpg" alt="" />
+          </div>
+          <div class="text-title">Basico</div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
